@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Script Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-canvas"></div>
+    <main class="container">
+        <header>
+            <h1 id="main-heading">AI Script Analyzer</h1>
+            <p class="subtitle">Extract insights and improve your content with AI</p>
+        </header>
+
+        <section class="analyzer-section card">
+            <div class="input-group">
+                <label for="script-input">Paste your script or text here</label>
+                <textarea id="script-input" placeholder="Start typing or paste your text here..." aria-label="Script content"></textarea>
+            </div>
+            
+            <div class="action-group">
+                <button id="analyze-button" onclick="analyzeText()">
+                    <span class="btn-text">Analyse Text</span>
+                    <div class="loader" id="loader"></div>
+                </button>
+            </div>
+        </section>
+
+        <section id="results-section" class="results-section card hidden">
+            <h2 id="results-heading">Analysis Results</h2>
+            <div id="results-content" class="results-grid">
+                <!-- Results will be injected here -->
+            </div>
+            <button class="secondary-btn" id="clear-btn" onclick="clearResults()">Clear</button>
+        </section>
+    </main>
+    <script src="/static/script.js"></script>
+</body>
+</html>
