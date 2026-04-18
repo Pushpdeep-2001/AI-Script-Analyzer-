@@ -27,14 +27,27 @@
                     <div class="loader" id="loader"></div>
                 </button>
             </div>
+            <div id="error-message" class="error-msg hidden"></div>
         </section>
 
         <section id="results-section" class="results-section card hidden">
             <h2 id="results-heading">Analysis Results</h2>
-            <div id="results-content" class="results-grid">
-                <!-- Results will be injected here -->
+            
+            <div class="tabs-container">
+                <div class="tabs-header" id="tabs-header">
+                    <button class="tab-btn active" data-tab="summary">Summary</button>
+                    <button class="tab-btn" data-tab="emotions">Emotions</button>
+                    <button class="tab-btn" data-tab="engagement">Engagement</button>
+                    <button class="tab-btn" data-tab="cliffhanger">Cliffhanger / Hook</button>
+                    <button class="tab-btn" data-tab="improvements">Improvements</button>
+                </div>
+                
+                <div class="tab-content" id="tab-content">
+                    <!-- Tab content will be injected here -->
+                </div>
             </div>
-            <button class="secondary-btn" id="clear-btn" onclick="clearResults()">Clear</button>
+
+            <button class="secondary-btn" id="clear-btn" onclick="clearResults()">Clear Analysis</button>
         </section>
     </main>
     <script src="/static/script.js"></script>

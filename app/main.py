@@ -4,8 +4,18 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 import os
 from app.api.routes import router as api_router
+from app.config import settings
+from app.services.logger import app_logger as logger
 
-app = FastAPI(title="AI Script Analyzer")
+app = FastAPI(title=settings.PROJECT_NAME)
+
+@app.on_event("startup")
+async def startup_event():
+    logger.info("Application starting up...")
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    logger.info("Application shutting down...")
 
 # # Configure CORS
 app.add_middleware(
