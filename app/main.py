@@ -17,6 +17,10 @@ async def startup_event():
 async def shutdown_event():
     logger.info("Application shutting down...")
 
+@app.get("/health")
+async def health_check():
+    return {"status": "healthy", "message": "AI Script Analyzer is running"}
+
 # # Configure CORS
 app.add_middleware(
     CORSMiddleware,
